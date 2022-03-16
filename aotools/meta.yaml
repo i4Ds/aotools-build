@@ -17,14 +17,14 @@ requirements:
   host:
     - matplotlib
     - numba
-    - numpy
+    - numpy {{ numpy }}
     - pip
     - python
     - scipy
   run:
     - matplotlib
     - numba
-    - numpy
+    - numpy {{ numpy }}
     - python
     - scipy
 
