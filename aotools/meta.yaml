@@ -1,0 +1,51 @@
+{% set name = "aotools" %}
+{% set version = "1.0.6" %}
+
+package:
+  name: "{{ name|lower }}"
+  version: "{{ version }}"
+
+source:
+  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
+  sha256: df6643794cd0e7970b337f141f5af9d641fc9cf9c90ef7248bbf8cdfb72b54be
+
+build:
+  number: 0
+  script: "{{ PYTHON }} -m pip install . -vv"
+
+requirements:
+  host:
+    - matplotlib
+    - numba
+    - numpy
+    - pip
+    - python
+    - scipy
+  run:
+    - matplotlib
+    - numba
+    - numpy
+    - python
+    - scipy
+
+test:
+  imports:
+    - aotools
+    - aotools.astronomy
+    - aotools.functions
+    - aotools.image_processing
+    - aotools.turbulence
+    - aotools.wfs
+
+about:
+  home: "https://github.com/aotools/aotools"
+  license: UNKNOWN
+  license_family: OTHER
+  license_file: 
+  summary: "A set of useful functions for Adaptive Optics in Python"
+  doc_url: 
+  dev_url: 
+
+extra:
+  recipe-maintainers:
+    - your-github-id-here
